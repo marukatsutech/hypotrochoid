@@ -70,7 +70,7 @@ def update(f):
         tx_step.set_text(' Step=' + str(cnt))
         th = - cnt / 10.
         theta_arm = theta_arm_init + th % (2 * np.pi)
-        theta1 = theta1_init - (th * r1 / (r0 + r1)) % (2 * np.pi)
+        theta1 = theta1_init - (th * r1 / (r0 - r1)) % (2 * np.pi)
         update_circle1_arm()
         x_curve.append(x_arm)
         y_curve.append(y_arm)
@@ -151,7 +151,7 @@ label_r0.pack(side='left')
 var_r0 = tk.StringVar(root)  # variable for spinbox-value
 var_r0.set(r0)  # Initial value
 s_r0 = tk.Spinbox(
-    root, textvariable=var_r0, format="%.1f", from_=0.1, to=4, increment=0.1,
+    root, textvariable=var_r0, format="%.1f", from_=0.1, to=5, increment=0.1,
     command=lambda: change_r0(var_r0.get()), width=5
     )
 s_r0.pack(side='left')
@@ -161,7 +161,7 @@ label_r1.pack(side='left')
 var_r1 = tk.StringVar(root)  # variable for spinbox-value
 var_r1.set(r1)  # Initial value
 s_r1 = tk.Spinbox(
-    root, textvariable=var_r1, format="%.1f", from_=0.1, to=4, increment=0.1,
+    root, textvariable=var_r1, format="%.1f", from_=0.1, to=5, increment=0.1,
     command=lambda: change_r1(var_r1.get()), width=5
     )
 s_r1.pack(side='left')
@@ -171,7 +171,7 @@ label_arm.pack(side='left')
 var_arm = tk.StringVar(root)  # variable for spinbox-value
 var_arm.set(r_arm)  # Initial value
 s_arm = tk.Spinbox(
-    root, textvariable=var_arm, format="%.1f", from_=0.1, to=4, increment=0.1,
+    root, textvariable=var_arm, format="%.1f", from_=0.1, to=5, increment=0.1,
     command=lambda: change_arm(var_arm.get()), width=5
     )
 s_arm.pack(side='left')
