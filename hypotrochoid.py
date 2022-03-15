@@ -92,7 +92,7 @@ y_max = 8.
 
 cnt = 0
 
-num_of_points = 500
+num_of_points = 300
 
 r0 = 4.
 r1 = 1.
